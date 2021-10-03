@@ -50,7 +50,34 @@ export class QuizComponent implements OnInit {
     
   }
   restart(){
-    this.route.navigate(['login'])
+    // this.route.navigate(['login'])
+    this.currentQuiz = 0;
+    this.answerSelected = false;
+    this.correctAnswers = 0;
+   this.incorrectAnswers = 0;
+   this.quizzes=this.shuffle(this.quizzes)
+  
+    // randomize!: number; 
+  
+    this.result = false;
+  
+  }
+  shuffle(array:any) {
+    let currentIndex = array.length,  randomIndex;
+  
+    // While there remain elements to shuffle...
+    while (currentIndex != 0) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+  
+    return array;
   }
 
 }
