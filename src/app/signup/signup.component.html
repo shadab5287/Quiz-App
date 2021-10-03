@@ -1,0 +1,41 @@
+<div class="main" >
+    <div style="position:relative">
+        <form  #SignupForm="ngForm" action="">
+            <div style="margin: 10px;">
+                <h1>Sign Up</h1>
+                <p>Please fill in this form to create an account.</p>
+                <hr>
+                <input required type ="text" name="name" placeholder="Name" [(ngModel)]="myName">
+            </div>
+            <div  style="margin: 10px;">
+                <input required type="text" name="Mobile Number" placeholder="Mobile Number" [(ngModel)]="Number">
+            </div>
+            <div style="margin: 10px;">
+                <input required type="text" name="Email" placeholder="Email Id" [(ngModel)]="Email">
+            </div>
+            <div style="margin: 10px;">
+             <input required type="number" name="Age" placeholder="Age" [(ngModel)]="Age">
+            </div>
+            <div style="margin: 10px;">
+              <input required type="text" name="Username" placeholder="Select Username" [(ngModel)]="Username">
+            </div>
+            <div style="margin: 10px;">
+             <input required type="password" name="password" placeholder="New password" [(ngModel)]="Password">
+            </div>
+            <div style="margin: 10px;">
+             <input required type="password" name="password" placeholder="Confirm Password" [(ngModel)]="Confirmpassword" >
+            </div>
+            <div style="display: flex;justify-content: space-between; margin: 10px;">
+                <div>
+                    <button (click)="navigateTologin()">Already Register</button>
+                </div>
+                <div>
+                    <button [disabled]="SignupForm.invalid" (click)="Submit()">Submit</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+  
+  
+</div>
